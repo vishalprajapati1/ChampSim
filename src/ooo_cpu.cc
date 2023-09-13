@@ -15,6 +15,7 @@
  */
 
 #include "ooo_cpu.h"
+#include <iostream>
 
 #include <algorithm>
 #include <chrono>
@@ -61,6 +62,7 @@ long O3_CPU::operate()
 
     fmt::print("Heartbeat CPU {} instructions: {} cycles: {} heartbeat IPC: {:.4g} cumulative IPC: {:.4g} (Simulation time: {:%H hr %M min %S sec})\n", cpu,
                num_retired, current_cycle, heartbeat_instr / heartbeat_cycle, phase_instr / phase_cycle, elapsed_time());
+    std::cout << std::endl;
     next_print_instruction += STAT_PRINTING_PERIOD;
 
     last_heartbeat_instr = num_retired;

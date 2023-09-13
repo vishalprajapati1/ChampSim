@@ -19,7 +19,7 @@
 #include <numeric>
 #include <string>
 #include <vector>
-
+#include <iostream>
 #include "champsim.h"
 #include "champsim_constants.h"
 #include "core_inst.inc"
@@ -95,6 +95,7 @@ int main(int argc, char** argv)
 
   fmt::print("\n*** ChampSim Multicore Out-of-Order Simulator ***\nWarmup Instructions: {}\nSimulation Instructions: {}\nNumber of CPUs: {}\nPage size: {}\n\n",
              phases.at(0).length, phases.at(1).length, std::size(gen_environment.cpu_view()), PAGE_SIZE);
+  std::cout << std::endl;
 
   auto phase_stats = champsim::main(gen_environment, phases, traces);
 
